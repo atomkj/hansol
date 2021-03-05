@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/*헤더*/
+
+#header{
+    margin:20px 50px;     /*헤더부분 양옆으로 50px적용, 패딩적용하면 util이 창오른쪽에 붙음*/
+    height:43px;          /*h1의 세로값을 같이 적용*/
+    line-height:43px; 
+    text-align:center;  /*gnb를 인라인블럭을 적용해서 부모에게 중간정렬 적용*/
+    position:relative; 
+}
+
+#header h1{
+    width:110px;
+    height:43px;
+    background:url(../images/sp_com.png) no-repeat -300px -5px;
+    text-indent:-9999px;
+    position:absolute;    /*앱솔루트로 띄우고 나면 gnb가 위로 올라옴*/ 
+}
+#header h1 a{
+    display:block;   /*text-indent를 주면 a태그도 같이 사라져서 블럭을 적용하여 a태그 잡아줌*/
+}
+
+.gnb{
+    display:inline-block; 
+}
+.gnb li{
+    float:left;
+    margin:0 20px; 
+}
+/*hover 적용*/
+.gnb li:hover{       /*li와 a태그에 같이 색변경을 할땐 .gnb li:hover a{}에 한번에 다 적어주면 되고 a태그에 블럭을 적용해줘야 li와a태그가 같이 잡힘*/             
+    border-bottom:3px solid #2d5b79; 
+}
+.gnb li a:hover{
+    color:#2d5b79;
+    font-weight:bold;
+}
+.gnb li a{
+    display:block; 
+}
+
+
+.util{
+    position:absolute;
+    right:0;
+    top:0;
+    font-size:12px; 
+}
+.util li{
+    float:left; 
+}
+
+.util li::after{
+    content:"";
+    display:inline-block;     /*블럭을 주면 각자 밑으로 떨어져서 inline-block적용*/
+    width:1px;
+    height:8px;
+    background:#999;
+    margin:0 5px;
+}
+.util li:last-child::after{display:none;}
+
+.util li a{}
+
+/*footer*/
+#footer{
+    font-size:13px;
+    color:#fff;
+}
+
+.fTop{
+    background:#383f43;
+    line-height:40px;  /*.csFamily 세로값이 40px여서 전체적으로 세로정렬되게 적용 */
+    padding:10px 0; 
+}
+.fMenu{
+    float:left; 
+}
+.fMenu li::before{
+    content:"";
+    display:inline-block;  /*inlinblock을 해줘야 글씨가 떨어지지않음*/
+    width:1px;
+    height:10px;
+    background:#fff;   /*가로세로값을 줬기때문에 백그라운드로 색 적용*/
+    margin:0 5px; 
+}
+.lineNone li:first-child::before{display:none;}
+
+.fMenu li{       /*전체적으로 플루트를 줄경우에는 부모에게도 플루트 적용*/
+    float:left;  /*부모 자식에게 모두 플루트적용시엔 cf를 안줘도됨*/
+    
+}
+.fMenu li a{
+    color:#fff; 
+}
+
+.csFmaily{
+    float:right;    /*그 위 부모 inner에게 플루트적용*/ 
+}
+.csFmaily>div{    /*familyBox안에 있는 div 적용*/
+    float:left;
+    height:40px;
+    padding:0 15px; 
+}
+.csBox{
+    background:#2a3033; 
+}
+.csBox span{              /*숫자와 한글이 글자차이가 나서*/
+    display:inline-block; /*span을 일라인요소라 블럭으로 바꾸고*/ 
+    vertical-align:top;    /*top으로 해서 글씨작은기준으로 적용*/
+     
+}
+.csBox .num{
+    font-size:22px;
+    margin-left:10px;
+}
+#footer a{
+    color:#fff;
+}
+.fmailyBox{
+    background:#fff url(../images/arrow.png) no-repeat 95% center;
+    color:#333;       /*글씨색상을 전체 흰색으로 적용해서 따로 적용*/
+    width:150px;
+    margin-left:10px; 
+}
+
+.fBottom{
+    background:#4c5459;
+    text-align:center;
+    padding:70px 0; 
+}
+.fLogo{
+    width:130px;
+    height:50px;
+    margin:0 auto;     /*로고가 블럭요소라 정렬시켜주게 적용*/
+    background:url(../images/sp_com.png) no-repeat -150px 0;
+    text-indent:-9999px;
+    margin-bottom:20px; 
+}
+.fBottom p{
+    margin:10px 0; 
+}
+.fInfo{
+    
+}
+.fInfo span::after{
+    content:"";
+    display:inline-block;
+    width:1px;
+    height:10px;
+    background:#fff;
+    margin:0 5px;
+}
+.fInfo span:last-child::after{display:none; }

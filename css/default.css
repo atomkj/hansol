@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{outline:none; }  /*모바일로 봤을때 선이 생기기때문에 없애줌*/
+
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,dt{
+    margin:0; 
+}
+
+body{
+    min-width:1200px;
+    color:#333;       /*a태그와 같이 폰트색상을 적용*/
+    font-family:'NotoSans',sans-serif;    
+}  /*폰트연결하여 적용 sans-serif:혹시 글씨체적용이 안되었을때 보여지게 하는 글씨체(고딕체)*/
+ul{
+    padding:0;
+    margin:0;
+    list-style:none; 
+}
+a{
+    color:#333;
+    text-decoration:none; 
+}
+.inner{
+    width:1200px;
+    margin:0 auto;
+}
+.cf::after{
+    content:"";
+    display:block;
+    clear:both; 
+}

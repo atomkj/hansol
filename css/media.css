@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+/*전체안보임 적용*/
+.panel,.mCon03Menu04,.mMainCon04{display:none; }
+
+
+@media screen and (max-width:768px){  /*768의 모바일사이즈까지 적용되게 써줌*/
+  /*모바일세팅*/
+    body{
+        min-width:auto;   /*원래대로 되돌리기*/ 
+    }
+    .inner{
+        width:auto;
+        margin:0; 
+    }
+    
+    /*모바일뷰에서 안보이게 적용*/
+    .gnb, .util, .mainCon02, .con03Menu04, .mainCon04, .con05Menu li p, .fInfo, .fLogo{display:none;}
+    
+    /*모바일뷰에서 보이게 적용*/
+    .panel,.mCon03Menu04,.mMainCon04{display:block;}
+    
+    /*이미지사이즈변경*/
+    #header h1,.panel, .sliderBtn, .con01List li span{
+        background-size:400px !important; /*panel의 이미지가 밑에 있어서 백그라운드 사이즈가 적용이 안되니 사이즈가 적용되게 !important를 적용*/
+    }
+    
+    /*헤더*/
+    #header{
+        height:auto;   /*auto:가 height값에 맞춰서 자동으로 맞춰짐*/ 
+        margin:10px 20px; 
+    }
+    #header h1{
+        width:70px;   /*포토샵에서 이미지를 줄인후 가로세로값 적용*/
+        height:28px;
+        background-position:0 0;  /*포지션을 적용해야 변경이 적용됨*/ 
+        position:static;   /*앱솔루트로 띄워져 있어서 기본값으로 적용*/ 
+    }
+    .panel{
+        width:16px;
+        height:16px;
+        background:url(../images/sp_com.png)-227px -98px;
+        text-indent:-9999px;
+        position:absolute;  /*웹에서 position:relative;적용되어있음*/
+        right:0;
+        top:6px;   /*#header h1세로28-panel세로16/2*/
+    }
+    .panel a{
+        display:block;
+        height:100%; 
+    }
+    /*mainSlider*/
+    .mainSlider{
+        margin:0;  /*마진적용된걸 없애고 양옆으로 늘어나게 적용*/
+        height:auto;  /*세로값적용*/
+        padding:45% 0;
+    }
+    .sliderTxt{padding-top:0;
+    }
+    .sliderTxt h2{
+        font-size:14px; 
+    }
+    .sliderTxt p{
+        font-size:11px; 
+    }
+    .sliderBtn{
+        width:13px;
+        height:23px;
+        margin-top:-12px; /*main에서 마진값이 적용되서 중간정렬이 안되니 반절마진 적용*/ 
+        background-position:-64px -30px; 
+    }
+    .prevBtn{
+        left:10px; 
+    }
+    .nextBtn{
+        right:10px; 
+        background-position:-79px -30px; 
+    }
+    
+    /*mainCon01*/
+    .mainCon01{
+        padding:20px 0; 
+    }
+    .con01List{
+        display:block;   /*con01List가 인라인블럭이여서 li의 가로값을 적용해도 영역이 li각자의 영역에서 가로값이 적용되니 부모를 블럭으로 바꿔줌*/
+        overflow:hidden;  /*세로값이 안잡혀서 html에서 cf를 적용해야하니 여기서 overflow:hidden적용*/
+    }
+    .con01List li{
+        width:33.33%;    /*100%로에서 li를 3개로 나눠서 가로값을 적용*/ 
+        margin:0;
+        padding:10px 0; 
+    }
+    .con01List li span{
+        width:33px;
+        height:33px;
+        margin:0 auto;  /*span이 블럭이여서 마진으로 가로중간정렬*/
+    }
+    .con01List li:hover span, .con01List li:hover .con01Icon06{   
+    /*con01Icon06은 main에서 span의 hover를 따로 적용해서 따로 적용해야함*/
+        background-position-y:-57px; 
+    }
+    .con01List li:hover .con01Icon03{
+        background-position-y:-55px; 
+    }
+    .con01List li:hover p{
+        color:#333;
+    }
+    .con01Icon01{
+        background-position:-1px -57px; 
+    }
+    .con01Icon02{
+        background-position:-37px -57px; 
+    }
+   .con01Icon03{
+        background-position:-74px -55px; 
+    }
+   .con01Icon04{
+        background-position:-109px -57px; 
+    }
+   .con01Icon05{
+        background-position:-145px -57px; 
+    }
+   .con01Icon06{
+        background-position:-181px -57px;
+    }
+    
+    /*mainCon03*/
+    .mainCon03{
+        padding:0 10px; 
+    }
+    .con03Grid{                /*정사각형만드는법*/
+        width:calc(50% - 5px);  /*중간여백 만들어주기. margin-right:10px적용해서 반적용 */
+        height:auto;          /*4.가로50%, 세로auto적용*/
+        margin-right:10px;
+        margin-bottom:10px; 
+        position:relative;     /*1.기준점적용*/
+    }
+    .con03Grid:nth-child(2n), .mCon03Menu04{ /*con03Menu04가 네번째라서 mCon03Menu04는 따로 적용해야함*/
+        margin-right:0; 
+    }
+    .con03Grid::after{      /*2.after를 만들어서 패딩바텀을 100%적용*/
+        content:"";
+        display:block;
+        padding-bottom:100%; /*패딩바텀을 줘야 after로 사라진게 보임*/
+    }
+    .con03Grid:hover p{display:none; }
+    .con03Grid a{
+        position:absolute;  /*3.a태그를 앱솔루트로 띄워서 가로세로100%로 적용*/
+        width:100%;
+        height:100%; 
+    }
+    .con03Grid h3{
+        padding-top:0;      /*5.패딩탑을 0으로 적용*/
+        position:absolute;  /*6.h3태그를 앱솔루트로 적용*/
+        width:100%;  /*7.가로정렬,세로정렬*/
+        top:50%;    /*세로정렬1*/ 
+        transform:translate(0, -50%);   /*세로정렬2*/
+        font-size:15px;
+    }
+    .mCon03Menu04{
+        padding:0; /*패딩 0을적용해야 앱솔루트띄운 a와 h태그가 자리잡힘 */
+    }
+    .mCon03Menu04 h3{
+        margin-bottom:0; 
+    }
+    
+    /*메인컨텐츠04*/
+    .mMainCon04 dl{
+        margin:0 10px 10px 10px;  /*widht값이 100%로면 calc를(20px) 적용하나 widht값이 없으면 마진을 줘도 됨*/
+        background:#f2f0ed;
+        height:45px;       /*height과 line-height적용하고 dt,dt에 vertical-align:middle적용해서 세로정렬*/
+        line-height:45px;
+        font-size:13px; 
+    }
+    .mMainCon04 dt{
+        width:20%; 
+        display:inline-block;   /*dt,dt가 세로한줄 정렬되게해주기*/
+        text-align:center;
+        vertical-align:middle;
+        color:#2d5b79;
+        font-weight:bold;
+    }
+    .mMainCon04 dd{
+        display:inline-block;   /*dt,dt가 세로한줄 정렬되게해주기*/
+        width:70%;         /*dd가 일라인이라 여백이 있어서 100%-20%=80%보다 적게 적용하면 dt옆으로 올라옴*/
+        vertical-align:middle; 
+    }
+    .mMainCon04 dd a{  /*a태그를 블럭처리가 될경우 부모에게 말줄임표적용이 아닌 a태그에 해줘야 적용이됨 */
+        display:block;
+        white-space:nowrap;  /*한줄처리*/ 
+        overflow:hidden;    /*넘치는 부분 가려주기*/
+        text-overflow:ellipsis;  /*말줄임표*/
+    }
+    /*mainCon05*/
+    .mainCon05{
+        padding:20px 10px 10px 10px;  /*뒤에 배경이 있어서 마진을 적용 하면 안됨*/
+    }
+
+    .con05Menu li{
+        width:calc(50% - 5px);
+        margin-right:10px; 
+        height:auto;
+        background-size:100% 100%;  /*가로세로 한번에 적용*/
+        margin-bottom:10px; 
+    }
+    .con05Menu li h3{
+        padding:70% 0 20% 0;
+        font-size:15px; 
+        
+    }
+    .con05Menu li:nth-child(2n){
+        margin-right:0; 
+    }
+    /*footer*/
+    .fMenu{ /*fMenu,csFmaily가 플루트가 되어있어 width:100%를 각각 적용하던지 float:none를 적용해야 세로값이 잡힘 */
+        width:100%;   /*1.fMenu의 ul이 각각 float가 적용되어서 우선 떨어지게 가로100%적용후*/
+        text-align:center;  /*4.가운데 정렬해줌*/
+        line-height:30px;  
+    }
+    .fMenu li{
+        float:none;    /*2.inline-block적용할려면 li각각 float를 해제해주고*/
+        display:inline-block;  /*3.가운데 정렬할수 있게 inline-block를 적용후*/
+    }
+    .fMenu li:first-child::before{   /*fMenu li 선없애기*/
+        display:none; 
+    }
+    .csFmaily{
+        width:100%;         
+        text-align:center;  
+    }
+    .csFmaily>div{
+        box-sizing:border-box;
+        float:none;
+        display:inline-block;
+    }
+    .csBox{
+        width:50%; 
+    }
+    .csBox .num{
+        font-size:13px;
+        margin-top:0; 
+    }
+    .fmailyBox{
+        width:40%;
+        text-align:left;
+        font-size:11px; 
+    }
+    .fBottom{
+        padding:30px 0; 
+    }
+}
+
+
+
